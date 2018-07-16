@@ -22,7 +22,7 @@ export class App extends Component {
         <h1>Jotto</h1>
         <Congrats success={this.props.success} />
         <Input />
-        <GuessedWords guessedWords={this.props.guessedWord} />
+        <GuessedWords guessedWords={this.props.guessedWords} />
       </div>
     );
   }
