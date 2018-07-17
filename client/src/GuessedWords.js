@@ -5,17 +5,16 @@ const GuessedWords = ({ guessedWords }) => {
   let contents;
   if (guessedWords.length === 0) {
     contents = (
-      <span data-test="guess-instructions">Try to guess the secret word</span>
+      <span data-test="guess-instructions">Try to guess the secret word!</span>
     );
   } else {
-    const guessedWordsRows = guessedWords.map(
-      ({ guessedWord, letterMatchCount }, index) => (
-        <tr data-test="guessed-word" key={index}>
-          <td>{guessedWord}</td>
-          <td>{letterMatchCount}</td>
-        </tr>
-      )
-    );
+    const guessedWordsRows = guessedWords.map((word, index) => (
+      <tr data-test="guessed-word" key={index}>
+        <td data-test="guessed-word-index">{index + 1}</td>
+        <td>{word.guessedWord}</td>
+        <td>{word.letterMatchCount}</td>
+      </tr>
+    ));
 
     contents = (
       <div data-test="guessed-words">
@@ -23,6 +22,7 @@ const GuessedWords = ({ guessedWords }) => {
         <table className="table table-sm">
           <thead className="thead-light">
             <tr>
+              <th>#</th>
               <th>Guess</th>
               <th>Matching Letters</th>
             </tr>

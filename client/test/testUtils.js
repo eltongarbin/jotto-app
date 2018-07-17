@@ -7,7 +7,7 @@ import { middlewares } from '../src/configureStore';
 /**
  * Create a testing store with imported reducers, middleware, and initial state.
  * globals: rootReducer, middlewares.
- * @param {store} initialState - Initial state for store.
+ * @param {object} initialState - Initial state for store.
  * @function storeFactory
  * @returns {Store} - Redux store.
  */

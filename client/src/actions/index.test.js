@@ -26,6 +26,8 @@ describe('getSecretWord action creator', () => {
 
     return store.dispatch(getSecretWord()).then(() => {
       const newState = store.getState();
+      console.log('secretWord', secretWord);
+      console.log('newState.secretWord', newState.secretWord);
       expect(newState.secretWord).toBe(secretWord);
     });
   });
